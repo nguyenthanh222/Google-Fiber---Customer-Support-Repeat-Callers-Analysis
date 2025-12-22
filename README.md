@@ -14,20 +14,49 @@ Tableau: Used for data visualization, trend analysis, and creating an interactiv
 # 3. Data Pipeline & ETL
 To create a "Single Source of Truth," I performed an ETL process to merge disparate tables from three different cities. Since the schemas were identical, I utilized a UNION ALL approach for efficiency and scalability.
 
-SQL Code Snippet:
+# SQL Code Snippet:
 
-SQL
-
-/* Consolidating data from 3 different markets into a unified target table */
-SELECT * FROM `google_fiber_project.market_1`
-
+SELECT
+  date_created,
+  contacts_n,
+  contacts_n_1,
+  contacts_n_2,
+  contacts_n_3,
+  contacts_n_4,
+  contacts_n_5,
+  contacts_n_6,
+  contacts_n_7,
+  new_type,
+  new_market
+FROM `data-pipeline-project-474902.fiber.market1`
 UNION ALL
-
-SELECT * FROM `google_fiber_project.market_2`
-
+SELECT
+  date_created,
+  contacts_n,
+  contacts_n_1,
+  contacts_n_2,
+  contacts_n_3,
+  contacts_n_4,
+  contacts_n_5,
+  contacts_n_6,
+  contacts_n_7,
+  new_type,
+  new_market
+FROM `data-pipeline-project-474902.fiber.market2`
 UNION ALL
-
-SELECT * FROM `google_fiber_project.market_3`;
+SELECT
+  date_created,
+  contacts_n,
+  contacts_n_1,
+  contacts_n_2,
+  contacts_n_3,
+  contacts_n_4,
+  contacts_n_5,
+  contacts_n_6,
+  contacts_n_7,
+  new_type,
+  new_market
+FROM `data-pipeline-project-474902.fiber.market3`
 
 Analytical Mindset: I chose this method to ensure data consistency across all reporting layers. By unifying the data at the database level, I avoided data silos and ensured that any global filter applied in Tableau would reflect accurately across all markets.
 
