@@ -73,7 +73,5 @@ Market Performance: Market 2 showed a downward trend in repeat calls after imple
 # 5. How to Use
 SQL Script: The full ETL script is located in the /scripts folder. You can run this in Google BigQuery to generate the consolidated table.
 
-# Dashboard Access:https://public.tableau.com/views/GoogleFiber_17634363986060/Story1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
-SQL Script: The full ETL script is located in the /scripts folder. You can run this in Google BigQuery to generate the consolidated table.
+# Dashboard Access:[![Tableau](https://img.shields.io/badge/Tableau-View_Dashboard-orange?style=for-the-badge&logo=tableau)](https://public.tableau.com/views/GoogleFiber_17634363986060/Story1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
-Dashboard Access:
