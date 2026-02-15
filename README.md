@@ -1,77 +1,28 @@
-# Google Fiber: Customer Support Efficiency & Repeat Caller Analysis
-# 1. Project Overview
-Context: Google Fiber's customer service team aims to improve the "First Contact Resolution" (FCR) rate. This project analyzes how often customers need to call back after their initial inquiry.
+# 🚀 Google Fiber: Customer Support Efficiency & Repeat Caller Analysis
 
-Problem: High repeat caller volume indicates unresolved issues, leading to increased operational costs and a degraded customer experience.
+![SQL](https://img.shields.io/badge/BigQuery-SQL-blue?style=for-the-badge&logo=google-bigquery&logoColor=white)
+![Tableau](https://img.shields.io/badge/Tableau-Interactive_Dashboard-orange?style=for-the-badge&logo=tableau&logoColor=white)
 
-Objective: To build an interactive dashboard that monitors repeat caller trends across three different markets, identifying the root causes of secondary inquiries to help leadership optimize support strategies.
+## 📌 Project Overview
+This project aims to improve **First Contact Resolution (FCR)** for Google Fiber's customer service team by identifying root causes of repeat inquiries. High repeat caller volume directly impacts operational costs and customer satisfaction.
 
-# 2. Tech Stack
-Google BigQuery (SQL): Used for data extraction, cleaning, and consolidating fragmented market data into a unified structure.
+## 🎯 Objectives
+* **Consolidate Data:** Merge fragmented datasets from three different markets into a unified "Single Source of Truth".
+* **Trend Analysis:** Monitor repeat caller volume across different timeframes (Weekly, Monthly, Quarterly).
+* **Identify Drivers:** Isolate issue types (Technical, Billing, Setup) that cause the most secondary inquiries.
 
-Tableau: Used for data visualization, trend analysis, and creating an interactive storytelling interface for stakeholders.
+## 🛠️ Tech Stack
+* **Data Processing:** Google BigQuery (SQL) for ETL and data unification using `UNION ALL` for scalability.
+* **Visualization:** Tableau for building an interactive storytelling interface.
 
-# 3. Data Pipeline & ETL
-To create a "Single Source of Truth," I performed an ETL process to merge disparate tables from three different cities. Since the schemas were identical, I utilized a UNION ALL approach for efficiency and scalability.
+## 💡 Key Insights
+* **Technical Friction:** "Technical Setup" issues showed a **15% higher repeat rate** within the first 7 days, indicating a need for improved self-installation guides.
+* **Market Benchmarking:** Market 2 achieved a downward trend in repeat calls following new agent training, serving as a "Best Practice" model for other regions.
 
-# SQL Code Snippet:
+## 📂 Project Structure
+* `/script`: Contains BigQuery SQL scripts for ETL processes.
+* `/data`: Sample datasets (if applicable).
+* `/docs`: Detailed analysis documentation.
 
-SELECT
-  date_created,
-  contacts_n,
-  contacts_n_1,
-  contacts_n_2,
-  contacts_n_3,
-  contacts_n_4,
-  contacts_n_5,
-  contacts_n_6,
-  contacts_n_7,
-  new_type,
-  new_market
-FROM `data-pipeline-project-474902.fiber.market1`
-UNION ALL
-SELECT
-  date_created,
-  contacts_n,
-  contacts_n_1,
-  contacts_n_2,
-  contacts_n_3,
-  contacts_n_4,
-  contacts_n_5,
-  contacts_n_6,
-  contacts_n_7,
-  new_type,
-  new_market
-FROM `data-pipeline-project-474902.fiber.market2`
-UNION ALL
-SELECT
-  date_created,
-  contacts_n,
-  contacts_n_1,
-  contacts_n_2,
-  contacts_n_3,
-  contacts_n_4,
-  contacts_n_5,
-  contacts_n_6,
-  contacts_n_7,
-  new_type,
-  new_market
-FROM `data-pipeline-project-474902.fiber.market3`
-
-Analytical Mindset: I chose this method to ensure data consistency across all reporting layers. By unifying the data at the database level, I avoided data silos and ensured that any global filter applied in Tableau would reflect accurately across all markets.
-
-# 4. Data Visualization & Insights
-# Key Dashboard Features:
-Dynamic Time-series Filters: Stakeholders can toggle between Week, Month, Quarter, and Year views to identify seasonal spikes or long-term performance trends.
-Market Comparison: A side-by-side view of Market 1, 2, and 3 to spot geographical performance gaps.
-Issue Type Breakdown: Categorization of inquiries (e.g., Technical, Billing, Setup) to see which category generates the most repeat friction.
-
-# Key Insights:
-Repeat Call Drivers: The analysis revealed that "Technical Setup" issues have a 15% higher repeat rate within the first 7 days compared to other types, suggesting a need for better self-installation guides.
-Market Performance: Market 2 showed a downward trend in repeat calls after implementing a new agent training module, providing a "Best Practice" model for other cities.
-
-# 5. How to Use
-SQL Script: The full ETL script is located in the /scripts folder. You can run this in Google BigQuery to generate the consolidated table.
-
-# Dashboard Access:[![Tableau](https://img.shields.io/badge/Tableau-View_Dashboard-orange?style=for-the-badge&logo=tableau)](https://public.tableau.com/views/GoogleFiber_17634363986060/Story1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
-
+## 🔗 Live Dashboard
+[Access the Interactive Tableau Story here](https://public.tableau.com/app/profile/thanh.nguyen1723/viz/GoogleFiber_17634363986060/Story1)).
